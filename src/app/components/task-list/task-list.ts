@@ -40,4 +40,8 @@ export class TaskList {
     // 5. On délègue la modification au service
     this.taskService.toggleTask(task);
   }
+
+  deleteTask(task: Task) {
+    this.taskService.deleteTask(task.id);
+  }
 }

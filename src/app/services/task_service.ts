@@ -25,4 +25,11 @@ export class TaskService {
   toggleTask(task: Task): void {
     task.completed = !task.completed;
   }
+
+  deleteTask(id: number): void {
+    const index = this.tasks.findIndex(t => t.id === id);
+    if (index !== -1) {
+      this.tasks.splice(index, 1); // Retire 1 élément à l'index trouvé
+    }
+  }
 }

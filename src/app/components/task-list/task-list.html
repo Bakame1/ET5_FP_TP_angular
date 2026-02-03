@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h2 class="mb-3">Mes Tâches</h2>
+  <h2 class="mb-3">Gestion de mes tâches</h2>
 
   <div class="input-group mb-3">
     <input
@@ -17,7 +17,10 @@
   <hr>
 
   <ul class="list-group">
-    <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center">
+    <li
+      *ngFor="let task of tasks"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
       <span [style.text-decoration]="task.completed ? 'line-through' : 'none'">
         {{ task.title }}
       </span>
@@ -33,7 +36,7 @@
     </li>
   </ul>
 
-  <p *ngIf="tasks.length === 0" class="text-muted mt-3">
-    Aucune tâche pour le moment. Ajoutez-en une !
-  </p>
+  <div *ngIf="tasks.length === 0" class="alert alert-info mt-3">
+    Aucune tâche pour le moment. Profitez-en pour vous reposer ! 🌴
+  </div>
 </div>
