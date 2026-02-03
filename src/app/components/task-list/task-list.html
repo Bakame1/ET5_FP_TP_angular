@@ -1,1 +1,19 @@
-<p>task-list works!</p>
+<h2>Mes Tâches</h2>
+
+<div>
+  <input type="text" [(ngModel)]="newTaskTitle" placeholder="Nouvelle tâche...">
+  <button (click)="addTask()">Ajouter</button>
+</div>
+
+<hr>
+
+<ul>
+  <li *ngFor="let task of tasks">
+    <span [style.text-decoration]="task.completed ? 'line-through' : 'none'">
+      {{ task.title }}
+    </span>
+    <button (click)="toggleTask(task)">
+      {{ task.completed ? 'Annuler' : 'Terminer' }}
+    </button>
+  </li>
+</ul>
